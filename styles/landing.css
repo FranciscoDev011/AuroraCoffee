@@ -1,3 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Stack+Sans+Text:wght@200..700&display=swap');
+
+:root {
+    /*Bakground Colors*/
+    --bg-color1: #5A3E2D;
+    --bg-color2: #f4eddd;
+    --bg-color3: #7e604e;
+
+    /*Fonts Colors*/
+    --font-primary: #171614;
+    --font-secundary: #ede0d4;
+
+    /*Other Colors*/
+    --bg-button: #4a3426;
+
+    /*Fonts Family*/
+    --logo: Merienda;
+    --title: Stack Sans Text; 
+    --text: Open Sans;
+}
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -16,11 +37,27 @@ header {
     justify-content: space-between;
     padding: 0 1.8rem;
     align-items: center;
+
+    position: fixed;
+    top: 0;
+    z-index: 10;
+
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); 
+    transition: background-color 0.3s;
+}
+
+header.scrolled {
+    background-color: var(--bg-color1);
+    border: none;
 }
 
 #logo {
     font-size: 1.65rem;
     font-weight: 500;
+    color: var(--font-secundary);
+    font-family: var(--logo);
 }
 
 #navbar {
@@ -41,12 +78,17 @@ header {
 #navlist a {
     text-decoration: none;
     font-size: 1.25rem;
+    color: var(--font-secundary);
+    font-family: var(--text);
 }
 
 #navbutton {
-    font-size: 1rem;
-    padding: 0.50rem 0.85rem;
+    font-size: 1.25rem;
+    padding: 0.65rem 1rem;
     border-radius: 25px;
+    background-color: var(--bg-button);
+    color: var(--font-secundary);
+    text-decoration: none;
 }
 
 .container {
@@ -57,39 +99,75 @@ header {
 }
 
 #hero {
-    border: 1px solid red;
     width: 100%;
-    height: 42.5rem;
+    height: 48.5rem;
     align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
+#hero-background {
+    position: absolute;
+    width: 100%;
+    height: 48.5rem;
+    overflow: hidden;
+    z-index: -1;
+}
+
+#hero-background img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,  rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.55) 50%, rgba(0, 0, 0, 0.70) 100%);
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+}
+
+#hero .container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 5px;
+    z-index: 2;
+    color: var(--font-secundary);
+}
+
 #hero h1 {
-    font-size: 3.2rem;
+    font-size: 4rem;
+    font-family: var(--title);
 }
 
 #hero p {
-    font-size: 0.95rem;
+    font-size: 1.25rem;
+    font-family: var(--text);
 }
 
 #hero-btn {
-    background-color: brown;
+    background-color: var(--bg-button);
     display: flex;
+    align-items: center;
     width: fit-content;
     padding: 0.85rem 1.2rem;
     border-radius: 25px;
-}
-
-#hero-btn a {
     text-decoration: none;
-    color: wheat;
+    font-size: 1.25rem;
+    color: var(--font-secundary);
+    font-family: var(--text);
+    margin-top: 15px;
 }
 
 #about {
     width: 100%;
     padding: 5rem 0;          
+    background-color: var(--bg-color2);
 }
 
 #about .container {
@@ -98,20 +176,25 @@ header {
     gap: 3rem;
 }
 
+#about-text h2 {
+    font-size: 2rem;
+    font-family: var(--title);
+}
+
 #about-text {
     flex: 1;
     display: flex;
     align-items: center;
     flex-direction: column;
     gap: 1.2rem;
-}
-
-#about-text h2 {
-    font-size: 2rem;
+    font-size: 1.15rem;
+    text-align: justify;
+    font-family: var(--text);
 }
 
 #about-img {
-    width: 42%;    
+    width: 50%;
+    height: 30rem;
     flex-shrink: 0;                           
     overflow: hidden;
 }
@@ -125,8 +208,9 @@ header {
 
 #menu {
     width: 100%;
-    padding: 5rem 0;
-    border: 1px solid gray;
+    padding: 2rem 0;
+    background-color: var(--bg-color1);
+    color: var(--font-secundary);
 }
 
 #menu .container {
@@ -137,10 +221,12 @@ header {
 
 #menu-title {
     font-size: 2rem;
+    font-family: var(--title);
 }
 
 #menu-desc {
     text-align: center;
+    font-family: var(--text);
 }
 
 #menu-list {
@@ -153,34 +239,43 @@ header {
 }
 
 .menu-cards {
- 
     display: flex;
     width: 22.5rem;
     height: 28.5rem;
     flex-direction: column;
     gap: 5px;
+    border: 1px solid black;
+    border-radius: 8px;
 }
 
 .menu-cards figure {
     width: 100%;
-    height: 17.5rem;
+    height: 14.5rem;
     flex-shrink: 0;
     overflow: hidden;
-    border-radius: 6px;
+    border-radius: 6px 6px 0 0;
 }
 
 .menu-cards img {
     width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
 .card-title {
     font-size: 1.5rem;
+    font-family: var(--title);
 }
 
 .card-description {
     text-align: left;
     font-size: 1rem;
+    font-family: var(--text);
+}
+
+.card-title, .card-description{
+    padding: 0 1rem;
+    color: var(--font-secundary);
 }
 
 .card-footer {
@@ -190,8 +285,21 @@ header {
     width: 100%;
     height: 100%;
     padding: 0 2rem;
+    font-family: var(--text);
+    color: var(--font-secundary);
 }
 
-.card-title, .card-description{
-    padding: 0 4px;
+.card-price {
+    font-size: 1.25rem;
+    font-family: var(--title);
+}
+
+.card-order {
+    font-size: 1.15rem;
+    padding: 0.50rem 1rem;
+    border: none;
+    border-radius: 25px;
+    background-color: var(--bg-button);
+    color: var(--font-secundary);
+    text-decoration: none;
 }
