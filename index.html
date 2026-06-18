@@ -3,20 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="Desperte seus sentidos com cafés especiais selecionados. Grãos artesanais, torra fresca e sabores únicos direto na sua xícara.">
+    <title>AuroraCoffee</title>
     <link rel="stylesheet" href="/styles/landing.css">
+    <link rel="shortcut icon" href="assets/favicon/favicon_io/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/3.35.0/tabler-icons.min.css">
 </head>
 <body>
     <header>
-        <a id="logo">AuroraCoffee</a>
+        <a id="logo" href="#hero">AuroraCoffee</a>
         <nav id="navbar">
-            <ul id="navlist">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Sobre Nós</a></li>
-                <li><a href="#">Menu</a></li>
+            <ul id="navlist" class="nav-anim">
+                <li><a class="nav-anim" href="#hero">Home</a></li>
+                <li><a href="#about">Sobre Nós</a></li>
+                <li><a href="#menu">Menu</a></li>
             </ul>
-            <a href="#" id="navbutton">Contato</a>
+            <a href="#social-links" class="button btn-anim"><span>Contato</span></a>
         </nav>
     </header>
     <main>
@@ -26,33 +28,64 @@
                 <div id="overlay"></div>
             </div>
             <div class="container">
-                <h1>Começando o dia <br> com energia e disposição.</h1>
-                <p>Cafés especiais selecionados para tornar cada manhã extraordinária.<p>
-                <a id="hero-btn" href="#">Continue</a>
+                <h1 class="hidden hidden-left">O café perfeito <br> para começar o seu dia</h1>
+                <p class="hidden hidden-left">Cafés especiais selecionados para melhor disposição.</p>
+                <a href="#about" class="button btn-anim hidden hidden-left"><span>Continue</span></a>
             </div>
+        </section>
+        <div id="stats">
+            <div id="stats-list">
+                <div class="stats-cards">
+                    <span class="stats-icon">+1000</span>
+                    <p class="stats-desc">clientes satisfeitos</p>
+                </div>
+
+                <div class="stats-cards">
+                    <span class="stats-icon">+1000</span>
+                    <p class="stats-desc">clientes satisfeitos</p>
+                </div>
+
+
+            </div>
+
+        </div>
         </section>
         <section id="about">
             <div class="container">
                 <div id="about-text">
                     <h2>Sobre Nós</h2>
-                    <p>Há anos dedicamos nossa paixão ao café para oferecer experiências únicas em cada xícara. Trabalhamos com grãos cuidadosamente selecionados, provenientes das melhores regiões produtoras, garantindo qualidade, aroma e sabor incomparáveis em todos os nossos produtos.</p>
-                    <p>Nosso compromisso vai além de servir um excelente café. Buscamos criar um ambiente acolhedor e convidativo, onde cada cliente possa desacelerar a rotina, apreciar bons momentos e compartilhar experiências especiais com amigos, familiares ou colegas de trabalho.</p>
-                    <p>Valorizamos a tradição do café, mas também acreditamos na inovação. Por isso, combinamos métodos clássicos de preparo com novas técnicas e receitas, proporcionando opções que agradam desde os apreciadores mais tradicionais até aqueles que desejam descobrir novos sabores.</p>
+                    <p>Há anos dedicamos nossa paixão ao café para oferecer experiências únicas em cada xícara. Trabalhamos com grãos cuidadosamente selecionados, provenientes das melhores regiões produtoras, garantindo qualidade, aroma e sabor incomparáveis em todos os nossos produtos, além de um espaço acolhedor caso deseja uma pausa.</p>
+                    <div id="about-info">
+                        <div class="about-cards hidden hidden-down">
+                            <i class="ti ti-coffee"></i>
+                            <p>grãos selecionados</p>
+                        </div>
+
+                        <div class="about-cards hidden hidden-down">
+                            <i class="ti ti-flame"></i>
+                            <p>torra artesanal</p>
+                        </div>
+
+                        <div class="about-cards hidden hidden-down">
+                            <i class="ti ti-heart"></i>
+                            <p>ambiente acolhedor</p>
+                        </div>
+                    </div>
                 </div>
-                <div id="about-img">
-                    <img id="mosaic-main" src="assets/images/about_img3.jpg" alt="about-image">
-                    <img id="mosaic-top" src="assets/images/about_img2.jpg" alt="about-image">
-                    <img id="mosaic-bottom" src="assets/images/about_img.jpg" alt="about-image">
+                <div id="about-mosaic">
+                    <img id="mosaic-main" class="hidden hidden-left" src="assets/images/about_img3.jpg" alt="about-image">
+                    <img id="mosaic-top" class="hidden hidden-up" src="assets/images/about_img2.jpg" alt="about-image">
+                    <img id="mosaic-bottom" class="hidden hidden-down" src="assets/images/about_img.jpg" alt="about-image">
                 </div>
             </div>
         </section>
         <section id="menu">
             <div class="container">
                 <h2 id="menu-title">Menu</h2>
-                <p id="menu-desc">Descubra cafés preparados com grãos selecionados e receitas especiais para todos os gostos. <br> Escolha sua bebida favorita e aproveite uma experiência única a cada gole.</p>
+                <p id="menu-desc">Selecionamos algumas das bebidas mais apreciadas para você conhecer nossa proposta e qualidade.</p>
                 <div id="menu-list">
 
-                    <div class="menu-cards">
+                    <div class="menu-cards hidden hidden-up">
                         <figure>
                             <img src="assets/images/black_coffee.png" alt="">
                         </figure>
@@ -60,11 +93,11 @@
                         <p class="card-description">O clássico café preto, preparado com grãos selecionados e torra equilibrada. Possui aroma marcante, sabor intenso e notas que valorizam a pureza do café sem adição de leite.</p>
                         <div class="card-footer">
                             <span class="card-price">R$5.99</span>
-                            <button class="card-order">Pedir</button>
+                            <button class="button btn-anim"><span>Pedir</span></button>
                         </div>
                     </div>
 
-                    <div class="menu-cards">
+                    <div class="menu-cards hidden hidden-up">
                         <figure>
                             <img src="assets/images/expresso.png" alt="">
                         </figure>
@@ -72,11 +105,11 @@
                         <p class="card-description">Extraído sob alta pressão, o expresso entrega uma bebida encorpada, com crema dourada e sabor concentrado. Ideal para quem aprecia a intensidade dos grãos em sua forma mais pura.</p>
                         <div class="card-footer">
                             <span class="card-price">R$7.99</span>
-                            <button class="card-order">Pedir</button>
+                            <button class="button btn-anim"><span>Pedir</span></button>
                         </div>
                     </div>
 
-                    <div class="menu-cards">
+                    <div class="menu-cards hidden hidden-up">
                         <figure>
                             <img src="assets/images/cappucino.png" alt="">
                         </figure>
@@ -84,20 +117,20 @@
                         <p class="card-description">Uma combinação equilibrada de café expresso, leite vaporizado e espuma cremosa, finalizada com um toque de chocolate ou canela. Perfeito para momentos de conforto e indulgência.</p>
                         <div class="card-footer">
                             <span class="card-price">R$12.99</span>
-                            <button class="card-order">Pedir</button>
+                            <button class="button btn-anim"><span>Pedir</span></button>
                         </div>
-                    </div>
-
+                    </div>                    
                 </div>
+                <a href="#" class="button btn-anim"><span>Pedir pelo WhatsApp</span></a>
             </div>
         </section>
     </main>
     <footer>
         <nav id="nav-footer">
-            <a href="#home">Home</a>
-            <a href="#sobre">Sobre nós</a>
+            <a href="#hero">Home</a>
+            <a href="#about">Sobre nós</a>
             <a href="#menu">Menu</a>
-            <a href="#contato">Contato</a>
+            <a href="#social-links">Contato</a>
         </nav>
         <div id="social-links">
             <span class="social-icon">
@@ -117,6 +150,6 @@
             <span id="copy">© 2026 Todos os direitos reservados.</span>
         </div>
     </footer>
-    <script src="javascript/navbar.js"></script>
+    <script src="javascript/script.js"></script>
 </body>
 </html>
