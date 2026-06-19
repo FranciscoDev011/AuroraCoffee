@@ -8,7 +8,8 @@
 
     /*Fonts Colors*/
     --font-primary: #171614;
-    --font-secundary: #ede0d4;
+    --font-secondary: #ede0d4;
+    --font-tertiary: #e7bc91;
 
     /*Other Colors*/
     --bg-button: #4a3426;
@@ -58,7 +59,7 @@ header.scrolled {
 #logo {
     font-size: 1.65rem;
     font-weight: 500;
-    color: var(--font-secundary);
+    color: var(--font-tertiary);
     font-family: var(--logo);
     cursor: pointer;
     text-decoration: none;
@@ -82,7 +83,7 @@ header.scrolled {
 #navlist a {
     text-decoration: none;
     font-size: 1.25rem;
-    color: var(--font-secundary);
+    color: var(--font-secondary);
     font-family: var(--text);
     position: relative;
 }
@@ -93,7 +94,7 @@ header.scrolled {
     border: none;
     border-radius: 25px;
     background-color: var(--bg-button);
-    color: var(--font-secundary);
+    color: var(--font-secondary);
     font-family: var(--text);
     text-decoration: none;
     overflow: hidden;
@@ -109,7 +110,7 @@ header.scrolled {
 
 #hero {
     width: 100%;
-    height: 46.5rem;
+    height: 52.5rem;
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -119,7 +120,7 @@ header.scrolled {
 #hero-background {
     position: absolute;
     width: 100%;
-    height: 46.5rem;
+    height: 52.5rem;
     overflow: hidden;
     z-index: -1;
 }
@@ -146,12 +147,16 @@ header.scrolled {
     position: relative;
     gap: 5px;
     z-index: 2;
-    color: var(--font-secundary);
+    color: var(--font-secondary);
 }
 
 #hero h1 {
     font-size: 4rem;
     font-family: var(--title);
+}
+
+#hero h1 > span {
+    color: #e7bc91;
 }
 
 #hero p {
@@ -162,12 +167,12 @@ header.scrolled {
 #hero .button {
     text-decoration: none;
     align-self: flex-start;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 #about {
     width: 100%;
-    min-height: 45rem;
+    min-height: 47.5rem;
     padding: 5rem 0;          
     background-color: var(--bg-color2);
     scroll-margin-top: 12rem;
@@ -185,8 +190,6 @@ header.scrolled {
 #about-text h2 {
     font-size: 2rem;
     font-family: var(--title);
-    border-bottom: 3px solid var(--bg-color3);
-    border-radius: 1px;
 }
 
 #about-text {
@@ -197,7 +200,7 @@ header.scrolled {
     flex-direction: column;
     gap: 1.2rem;
     font-size: 1.15rem;
-    text-align: justify;
+    text-align: center;
     font-family: var(--text);
 }
 
@@ -223,8 +226,8 @@ header.scrolled {
     gap: 0.5rem;
     text-align: center;
     border-radius: 8px;
-    color: var(--font-secundary);
-    transition: transform 0.6s ease;
+    color: var(--font-secondary);
+    transition: 0.6s ease;
 }
 
 .about-cards i {
@@ -256,10 +259,10 @@ header.scrolled {
 #menu {
     width: 100%;
     padding: 2rem 0;
-    min-height: 45rem;
+    min-height: 47.5rem;
 
     background-color: var(--bg-color3);
-    color: var(--font-secundary);
+    color: var(--font-secondary);
 
     display: flex;
     flex-direction: column;
@@ -272,9 +275,6 @@ header.scrolled {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-#menu .container {
     margin-bottom: 2rem;
 }
 
@@ -296,7 +296,7 @@ header.scrolled {
     flex-flow: row wrap;
     width: 100%;
     margin-top: 1.5rem;
-    gap: 1.5rem;
+    gap: 2.5rem;
 }
 
 .menu-cards {
@@ -307,8 +307,7 @@ header.scrolled {
     gap: 5px;
     border: 1px solid black;
     border-radius: 8px;
-    cursor: context-menu;
-    transition: transform 0.3s ease;
+    transition: 0.6s ease;
 }
 
 .menu-cards figure {
@@ -339,7 +338,7 @@ header.scrolled {
 
 .card-title, .card-description{
     padding: 0 1rem;
-    color: var(--font-secundary);
+    color: var(--font-secondary);
 }
 
 .card-footer {
@@ -350,7 +349,7 @@ header.scrolled {
     height: 100%;
     padding: 0 2rem;
     font-family: var(--text);
-    color: var(--font-secundary);
+    color: var(--font-secondary);
 }
 
 .card-price {
@@ -367,6 +366,89 @@ header.scrolled {
 
 #menu > .container > .button {
     margin-top: 30px;
+}
+
+#testimonials {
+    background-color: var(--bg-color2);
+    width: 100%;
+    height: 40rem;
+    padding: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--text);
+}
+
+#testimonials .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+#testimonials h2 {
+    font-size: 2rem;
+    font-family: var(--title);
+    margin-bottom: 2rem;
+}
+
+#testimonials-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+    gap: 2.5rem;
+}
+
+.user-cards {
+    display: flex;
+    flex-direction: column;
+    width: 25rem;
+    height: 20rem;
+    gap: 5px;
+    border: 1px solid black;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    transition: 0.6s ease;
+}
+
+.user-info {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.user-info figure {
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 6px 6px 0 0;
+}
+
+.user-info img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.user-info h4 {
+    font-size: 1.5rem;
+    font-family: var(--title);
+    color: var(--bg-color1)
+}
+
+.user-report p {
+    margin: 0 1rem;
+    font-size: 1rem;
+    font-family: var(--text);
+    text-align: center;
+}
+
+.stars {
+    color: #fee255;
+    font-size: 1.5rem;
 }
 
 footer {
@@ -457,6 +539,27 @@ footer {
     transform: translateX(30px);
 }
 
+.hidden-border {
+    position: relative;
+    display: inline-block;
+}
+
+.hidden-border:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 0;
+    height: 4px;
+    border-radius: 8px;
+    background-color: var(--bg-color3);
+    transition: width 0.8s ease;
+}
+
+.hidden-border.show::after {
+    width: 100%;
+}
+
 .show {
     opacity: 1;
     transform: translate(0);
@@ -510,12 +613,7 @@ footer {
     z-index: 2;
 }
 
-.about-cards:hover {
+.cards-up:hover {
     transform: translateY(-8px);
-    box-shadow: 0 5px 10px rgba(0,0,0,.15);
-}
-
-.menu-cards:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 5px 10px rgba(0,0,0,.15);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }

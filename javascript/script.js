@@ -20,5 +20,5 @@ const myObserver = new IntersectionObserver( (entries) => {
     }, {threshold: 0.4 }
 )  
 
-const animated = document.querySelectorAll('.hidden');
+const animated = document.querySelectorAll('.hidden, .hidden-border');
 animated.forEach((element) => myObserver.observe(element));
